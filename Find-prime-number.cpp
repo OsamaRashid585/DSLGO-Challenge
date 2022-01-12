@@ -2,18 +2,18 @@
 using namespace std;
 
 int main(){
-    int div = 2;
-    int num[] = {12,7,6,3};
-    for (int i = 0; i < 4; i++)
-    {
-        while(div < num[i])
-        {
-            if(num[i] % div != 0){
-            cout << num[i] << endl;
+    int n = 30;
+    int checked;
+    for(int d = 2; d < n;d++){
+        if(n % d != 0){
+            if(d == (n-1)){
+                cout << n << " is prime" << endl;
+            }
         }
-           div++;
+        else{
+            cout << n << "not prime" << endl;
+            break;
         }
     }
     
 }
-
