@@ -2,18 +2,15 @@
 using namespace std;
 
 int main(){
-    int n = 30;
-    int checked;
-    for(int d = 2; d < n;d++){
-        if(n % d != 0){
-            if(d == (n-1)){
-                cout << n << " is prime" << endl;
-            }
-        }
-        else{
-            cout << n << "not prime" << endl;
+    int n = 31;
+    int div;
+    for(div = 2; div < n; div++){
+        if(n%div == 0){
+            cout << "not prime";
             break;
         }
     }
-    
+    if(div == n){
+        cout << n << " is prime";
+    }
 }
