@@ -3,13 +3,11 @@ using namespace std;
 
 void fictorial(int n){
     int t1 = 1;
-    int t2 = 2;
-    int fic = 0;
-    for (int i = 1; i < n; i++)
+    int fic;
+    for (int i = 2; i <= n; i++)
     {
-        fic = t1 * t2;
+        fic = t1 * i;
         t1 = fic;
-        t2++;
     }
     cout << fic << endl;
     
