@@ -24,3 +24,5 @@ int main(){
         cout << "not armstorme";
     }
 }
+
+// armstrong number is make cube of evry num and plue all of them result is the same number you give is armastrong number
