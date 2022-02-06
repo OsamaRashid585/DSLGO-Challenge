@@ -1,29 +1,31 @@
 #include <iostream>
 using namespace std;
-#include <vector>
 
 int main(){
-    int n = 4;
-    int array[n] = {3,6,3,8}; // 4
+    int n = 9;
+    int a[n] = {9,8,7,6,5,4,3,2,1};
     
-for (int o = 0; o < n; o++)
-{
-    for (int i = 0; i < (n-1); i++)
+
+    for (int i = 0; i < n; i++)
     {
-        if(array[i] > array[i+1]){
-            int pa = array[i];
-            array[i] = array[i+1];
-            array[i+1] = pa;
-        }
+        for (int r = 0; r < (n-1); r++)
+        {
+           if(a[r] > a[r+1]){
+              int temp = a[r];
+              a[r] = a[r+1];
+              a[r+1] = temp;
+           }
+       }
     }
-}
+    
+    
+    ////print sorted array
 
-for (int c = 0; c < n; c++)
-{
-    cout << array[c];
-}
-
-
-
+    for (int i = 0; i < n; i++)
+    {
+        cout << a[i];
+    }
+    
     
 }
+
