@@ -9,16 +9,12 @@ int main()
 
     for (int i = 0; i < n; i++)
     {
+        subArraySum = 0;
         for (int j = i; j < n; j++)
         {
-            subArraySum = 0;
-            for (int k = i; k <= j; k++)
-            {
-                subArraySum += a[k];
-            }
-            cout << subArraySum << endl;
+            subArraySum += a[j];
         }
-        
+        cout << subArraySum << endl;
     }
     
 }
