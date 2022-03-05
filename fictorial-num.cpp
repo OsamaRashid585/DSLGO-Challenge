@@ -1,17 +1,18 @@
 #include <iostream>
 using namespace std;
 
-void fictorial(int n){
-    int t1 = 1;
-    int fic;
-    for (int i = 2; i <= n; i++)
+int fictorial(int n){
+    int old = n;
+    int ans;
+    for (int i = 1; i < old; i++)
     {
-        fic = t1 * i;
-        t1 = fic;
+       ans = n *= (old-i);
     }
-    cout << fic << endl;
-    
+    return ans;
 }
-int main(){
-    fictorial(5);
+int main()
+{
+    cout << fictorial(5);
 }
+// what is fictorial 5! = 4*3*2*1;
+//https://www.youtube.com/watch?v=o7RYf76tedw
