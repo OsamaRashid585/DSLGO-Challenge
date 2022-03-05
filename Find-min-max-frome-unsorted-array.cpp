@@ -1,23 +1,24 @@
 #include <iostream>
 using namespace std;
-#include <vector>
 
-int main(){
-    int n = 4;
-    int array[n] = {3,6,8,3}; // 4
-    
-    for (int o = 0; o < n; o++)
+
+int main()
+{
+    int n = 7;
+    int a[n] = {2,5,84,3,67,4,8};
+    int min = a[0];
+    int max = a[0];
+    for (int  i = 0; i < (n-1); i++)
     {
-        for (int i = 0; i < (n-1); i++)
-        {
-            if(array[i] > array[i+1]){
-                int pa = array[i];
-                array[i] = array[i+1];
-                array[i+1] = pa;
-            }
+        if(min > a[i+1]){
+            min = a[i+1];
         }
+
+        if(max < a[i+1]){
+            max = a[i+1];
+        }
+
     }
-    cout << array[0] << endl;
-    cout << array[n-1];
-    
+    cout << min << endl;
+    cout << max;
 }
