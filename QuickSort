@@ -1,0 +1,59 @@
+#include<iostream>
+using namespace std;
+
+// Function prototypes
+static void Quicksort(int a[], int lb, int ub);
+static int Partition(int a[], int lb, int ub);
+
+int main()
+{
+	int arr[] = {3, 47, 6, 42, 245, 3, 32, 4, 7};
+	int n = 8;
+
+	Quicksort(arr, 0, n - 1);
+
+	for (int c = 0; c < n; c++)
+	{
+		cout << arr[c] << " ";
+	}
+	
+}
+
+static void Quicksort(int a[], int lb, int ub)
+{
+	if (lb < ub)
+	{
+		int loc = Partition(a, lb, ub);
+		Quicksort(a, lb, loc - 1);
+		Quicksort(a, loc + 1, ub);
+	}
+}
+
+static int Partition(int a[], int lb, int ub)
+{
+	int p = a[lb]; // Choose the pivot element
+	int start = lb;
+	int end = ub;
+
+	while (start < end)
+	{
+		while (a[start] <= p)
+		{
+			start++;
+		}
+		while (a[end] > p)
+		{
+			end--;
+		}
+		if (start < end)
+		{
+			swap(a[start], a[end]);
+		}
+	}
+
+	// Swap the pivot element into its correct position
+	swap(a[lb], a[end]);
+
+	// Return the index of the pivot element
+	return end;
+}
