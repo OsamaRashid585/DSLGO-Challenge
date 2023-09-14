@@ -1,0 +1,39 @@
+Geek for geek badic array in solve my
+public List<int> subarraySum(int[] arr, int n, int s)
+        {
+            List<int> subsum = new List<int>();
+			bool hasfind = false;
+            int sum = arr[0];
+            int l = 0;
+            int r = 0;
+            
+            if(s == 0){
+                subsum.Add(-1);
+                return subsum;
+            }
+            
+            while(r < n){
+                if(sum == s){
+                    hasfind = true;
+                    break;
+                }
+                else if(sum < s){
+                    r++;
+                    if(r<n) sum += arr[r];
+                }
+                else{
+                    sum -= arr[l];
+                    l++;
+                }
+            }
+            
+            if(hasfind){
+                subsum.Add(l+1);
+                subsum.Add(r+1);
+                return subsum;
+            }
+
+            subsum.Add(-1);
+            return subsum;
+            
+        }
