@@ -1,0 +1,20 @@
+ public void reverse(int[] a,int s,int e){
+        while(s<e){
+           int t = a[s];
+           a[s] = a[e];
+           a[e] = t;
+           s++;
+           e--;
+        }
+    }
+    //Complete this function
+    public void reverseInGroups(int[] a,int n,int k)
+    {
+        int l = 0;
+        int r = k-1;
+        while(r < n){
+            reverse(a,l,r);
+            l = r+1;
+            r = r+k;
+        }
+        reverse(a,l,n-1);
