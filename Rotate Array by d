@@ -1,0 +1,25 @@
+ void rotateArr(int a[], int d, int n){
+        d = d%n;
+        reverse(a,0,d-1);
+        reverse(a,d,n-1);
+        reverse(a,0,n-1);
+    }
+    void reverse(int a[], int s, int e){
+        while(s<e){
+            int t = a[s];
+            a[s] = a[e];
+            a[e] = t;
+            s++;
+            e--;
+        }
+    }
+d=2;
+array [1,2,3,4,5]
+1. rever(1,2); // reverse(0,d-1);
+array = [2,1,3,4,5]
+2. reverse(3,4,5)  // reverse(d,n-1);
+array = [2,1,5,4,3]
+3. reverse(2,1,5,4,3)  // reverse(0,n-1);
+array = [3,4,5,1,2]
+
+O(N)
