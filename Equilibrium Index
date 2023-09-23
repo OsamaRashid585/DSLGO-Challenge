@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    // Function to calculate the sum of elements in a subarray
+    static int Sum(List<int> a, int s, int e)
+    {
+        int sum = 0;
+        while (s < e)
+        {
+            sum += a[s];
+            s++;
+        }
+        return sum;
+    }
+
+    // Function to find the equilibrium index
+    static int FindEquilibriumIndex(List<int> a)
+    {
+        int n = a.Count;
+        if (n <= 2) return -1;
+        int r = 0;
+        while (r < n)
+        {
+            int lsum = Sum(a, 0, r);
+            int rsum = Sum(a, r + 1, n);
+
+            if (lsum == rsum) return r;
+            else { r++; }
+        }
+        return -1;
+    }
+
+    static void Main()
+    {
+        List<int> a = new List<int> { 0, 0, 0, 0, 0, 0,0,0,0,0 };
+        Console.WriteLine(FindEquilibriumIndex(a));
+    }
+}
+quesitn: if given arry of size n you have to return index num at which the left sum is eqult to the right sum
+answer : while (r < n)
+        {
+            int lsum = Sum(a, 0, r);
+            int rsum = Sum(a, r + 1, n);
+
+            if (lsum == rsum) return r;
+            else { r++; }
+        }
+        return -1;
