@@ -1,0 +1,75 @@
+using System;
+using System.Collections.Generic;
+using System.Dynamic;
+
+public class Node{
+  public int data;
+  public Node Next;
+
+  public Node(int val){
+    data = val;
+    Next = null;
+  }
+}
+public class Program
+{  
+  public static void insertAtHead(ref Node head,int data){
+    Node nnode = new Node(data);
+    nnode.Next = head;
+    head = nnode;
+  }
+  public static void DeleteAtHead(ref Node head,int data){
+    head.Next = head;
+  }
+  public static void insertAtPostion(int postion,int data, Node head){
+    Node nnode = new Node(data);
+    Node temp = head;
+    int c = 1;
+    while (c < postion-1)
+    {
+      temp = temp.Next;
+      c++;
+    }
+    nnode.Next = temp.Next;
+    temp.Next = nnode;
+  }
+  public static void DeleteAtPostion(int postion, Node head){
+    Node temp = head;
+    int c = 1;
+    while (c < postion-1)
+    {
+      temp = temp.Next;
+      c++;
+    }
+    temp.Next = temp.Next.Next;
+  }
+  public static void insertAtTail(Node head,int data){
+    Node nnode = new Node(data);
+    Node temp = head;
+    while (temp.Next != null)
+    {
+      temp = temp.Next;
+    }
+    temp.Next = nnode;
+  }
+  public static void trivase(Node head){
+    Node temp = head;
+    while (temp != null)
+    {
+      Console.Write(temp.data);
+      temp = temp.Next;
+    }
+  }
+  public static void Main()
+  {
+    Node n1= new Node(1);
+    Node head = n1;
+    
+    insertAtTail(head,2);
+    insertAtTail(head,4);
+    insertAtTail(head,5);
+    insertAtPostion(3,3,head);
+    DeleteAtPostion(5,head);
+    trivase(head);
+  }
+}
